@@ -1,0 +1,64 @@
+# TFT_eWidget library
+
+TFT_eWidget	KEYWORD1
+ButtonWidget	KEYWORD1
+
+initButton	KEYWORD2
+initButtonUL	KEYWORD2
+setLabelDatum	KEYWORD2
+drawButton	KEYWORD2
+contains	KEYWORD2
+press	KEYWORD2
+isPressed	KEYWORD2
+justPressed	KEYWORD2
+justReleased	KEYWORD2
+
+setPressAction	KEYWORD2
+setReleaseAction	KEYWORD2
+
+setPressTime	KEYWORD2
+setReleaseTime	KEYWORD2
+getPressTime	KEYWORD2
+getReleaseTime	KEYWORD2
+
+drawSmoothButton	KEYWORD2
+getState	KEYWORD2
+
+
+SliderWidget	KEYWORD1
+drawSlider	KEYWORD2
+createSlider	KEYWORD2
+createKnob	KEYWORD2
+setSliderScale	KEYWORD2
+setSliderPosition	KEYWORD2
+getSliderPosition	KEYWORD2
+getBoundingBox	KEYWORD2
+getBoundingRect	KEYWORD2
+checkTouch	KEYWORD2
+
+
+TraceWidget	KEYWORD1
+startTrace	KEYWORD2
+addPoint	KEYWORD2
+getLastPointX	KEYWORD2
+getLastPointY	KEYWORD2
+
+
+GraphWidget	KEYWORD1
+createGraph	KEYWORD2
+setGraphPosition	KEYWORD2
+getGraphPosition	KEYWORD2
+drawGraph	KEYWORD2
+setGraphScale	KEYWORD2
+setGraphGrid	KEYWORD2
+getBoundingBox	KEYWORD2
+getBoundingRect	KEYWORD2
+getPointX	KEYWORD2
+getPointY	KEYWORD2
+addLine	KEYWORD2
+
+
+MeterWidget	KEYWORD1
+analogMeter	KEYWORD2
+setZones	KEYWORD2
+updateNeedle	KEYWORD2

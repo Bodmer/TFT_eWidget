@@ -1,0 +1,22 @@
+{
+  "name": "TFT_eWidget",
+  "version": "0.0.1",
+  "keywords": "Arduino, tft, display, button, gui, graph, meter, slider",
+  "description": "A TFT GUI widget library",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Bodmer/TFT_eWidgit"
+  },
+  "authors":
+  [
+    {
+        "name": "Bodmer",
+        "email": "bodmer@anola.net",
+        "maintainer": true
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "*",
+  "headers": "TFT_eWidget.h"
+}
