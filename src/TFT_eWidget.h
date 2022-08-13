@@ -11,6 +11,13 @@
 //Standard support
 #include <Arduino.h>
 
+// LittleFS is required for touch calibration in TFT_eSPI sketches
+#if defined (ESP8266) || defined (ESP32)
+  #include <pgmspace.h>
+  #include <FS.h>
+  #include <LittleFS.h>
+#endif
+
 #include <TFT_eSPI.h>
 
 #include "widgets/button/ButtonWidget.h"
