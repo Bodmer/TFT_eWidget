@@ -17,7 +17,9 @@ class MeterWidget
     // Set red, orange, yellow and green start+end zones as a percentage of full scale
     void setZones(uint16_t rs, uint16_t re, uint16_t os, uint16_t oe, uint16_t ys, uint16_t ye, uint16_t gs, uint16_t ge);
     // Draw meter meter at x, y and define full scale range plus the scale labels
-    void analogMeter(uint16_t x, uint16_t y, float fullScale, const char *string, const char *s0, const char *s1, const char *s2, const char *s3, const char *s4);
+    void analogMeter(uint16_t x, uint16_t y, float fullScale, const char *units, const char *s0, const char *s1, const char *s2, const char *s3, const char *s4);
+    // Draw meter meter at x, y and define full scale range plus the scale labels
+    void analogMeter(uint16_t x, uint16_t y, float startScale, float endScale, const char *units, const char *s0, const char *s1, const char *s2, const char *s3, const char *s4);
     // Move needle to new position
     void updateNeedle(float value, uint32_t ms_delay);
 
@@ -36,6 +38,7 @@ class MeterWidget
 
     // Scale factor
     float factor;
+    float scaleStart;
 
     // Scale label
     char     mlabel[9];

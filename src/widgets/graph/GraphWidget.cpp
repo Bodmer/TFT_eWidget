@@ -182,6 +182,14 @@ uint16_t GraphWidget::regionCode(float x, float y)
 		code |= BOTTOM;
 	else if (y > _yMax) // above the rectangle
 		code |= TOP;
+
+// Reported 4 bit code values
+//
+// 	        left 	central  right
+// top 	    1001 	 1000 	 1010
+// central 	0001 	 0000 	 0010
+// bottom 	0101 	 0100 	 0110 
+
 	return code;
 }
 

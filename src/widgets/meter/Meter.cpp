@@ -15,6 +15,7 @@
   my = 0;
 
   factor = 1.0;
+  scaleStart = 0.0;
 
   mlabel[8] = '\0';
 
@@ -40,14 +41,20 @@
 // #########################################################################
 // Draw meter meter at x, y and define full scale range & the scale labels
 // #########################################################################
-void MeterWidget::analogMeter(uint16_t x, uint16_t y, float fullScale, const char *label, const char *s0, const char *s1, const char *s2, const char *s3, const char *s4)
+void MeterWidget::analogMeter(uint16_t x, uint16_t y, float fullScale, const char *units, const char *s0, const char *s1, const char *s2, const char *s3, const char *s4)
+{
+  analogMeter(x, y, 0.0, fullScale, units, s0, s1, s2, s3, s4);
+}
+
+void MeterWidget::analogMeter(uint16_t x, uint16_t y, float startScale, float endScale, const char *units, const char *s0, const char *s1, const char *s2, const char *s3, const char *s4)
 {
   // Save offsets for needle plotting
   mx = x;
   my = y;
-  factor = 100.0/fullScale;
+  factor = 100.0/(endScale - startScale);
+  scaleStart = startScale;
 
-  strncpy(mlabel, label, 8);
+  strncpy(mlabel, units, 8);
 
   strncpy(ms0, s0, 4);
   strncpy(ms1, s1, 4);
@@ -155,7 +162,7 @@ void MeterWidget::analogMeter(uint16_t x, uint16_t y, float fullScale, const cha
   
   updateNeedle(0, 0);
 }
-
+    
 // #########################################################################
 // Update needle position
 // This function is blocking while needle moves, time depends on ms_delay
@@ -165,10 +172,10 @@ void MeterWidget::analogMeter(uint16_t x, uint16_t y, float fullScale, const cha
 // #########################################################################
 void MeterWidget::updateNeedle(float val, uint32_t ms_delay)
 {
-  int value = val * factor;
+  int value = (val - scaleStart) * factor;
 
   ntft->setTextColor(TFT_BLACK, TFT_WHITE);
-  char buf[8]; dtostrf(value/factor, 5, 1, buf);
+  char buf[8]; dtostrf(val, 5, 1, buf);
   
   ntft->drawRightString(buf, mx + 50, my + 119 - 20, 2);
 

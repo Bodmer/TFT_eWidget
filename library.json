@@ -1,6 +1,6 @@
 {
   "name": "TFT_eWidget",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "keywords": "Arduino, tft, display, button, gui, graph, meter, slider",
   "description": "A TFT GUI widget library",
   "repository":
